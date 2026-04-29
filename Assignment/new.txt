@@ -1,0 +1,2 @@
+Hi this is multiple string insert
+Hi this is second string
