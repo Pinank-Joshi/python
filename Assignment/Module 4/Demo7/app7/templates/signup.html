@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Premium Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body
+    class="text-white min-h-screen flex items-center justify-center overflow-y-auto py-8 relative font-sans selection:bg-white selection:text-black">
+
+    <div class="ambient-glow"></div>
+
+    <div class="w-full max-w-md p-8 relative z-10 animate-slide-up">
+
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold tracking-widest uppercase mb-2 animate-slide-up delay-100">Create Account</h1>
+            <p class="text-gray-400 text-sm tracking-wide animate-slide-up delay-200">Join the exclusive network.</p>
+        </div>
+
+        <form action="#" method="POST" class="space-y-5">
+            {% csrf_token %}
+
+            <div class="animate-slide-up delay-100">
+                <label for="name" class="block text-xs font-semibold uppercase tracking-wider mb-2 text-gray-300">Full
+                    Name</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full bg-white text-black px-4 py-3 outline-none border border-transparent focus:border-gray-500 focus:ring-4 focus:ring-white/20 transition-all duration-300 shadow-lg placeholder-gray-500"
+                    placeholder="John Doe">
+            </div>
+
+            <div class="animate-slide-up delay-200">
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider mb-2 text-gray-300">Email
+                    Address</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full bg-white text-black px-4 py-3 outline-none border border-transparent focus:border-gray-500 focus:ring-4 focus:ring-white/20 transition-all duration-300 shadow-lg placeholder-gray-500"
+                    placeholder="name@example.com">
+            </div>
+
+            <div class="animate-slide-up delay-200">
+                <label for="age"
+                    class="block text-xs font-semibold uppercase tracking-wider mb-2 text-gray-300">Age</label>
+                <input type="number" id="age" name="age" required min="1" max="120"
+                    class="w-full bg-white text-black px-4 py-3 outline-none border border-transparent focus:border-gray-500 focus:ring-4 focus:ring-white/20 transition-all duration-300 shadow-lg placeholder-gray-500"
+                    placeholder="25">
+            </div>
+
+            <div class="animate-slide-up delay-300">
+                <label for="password"
+                    class="block text-xs font-semibold uppercase tracking-wider mb-2 text-gray-300">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="w-full bg-white text-black px-4 py-3 outline-none border border-transparent focus:border-gray-500 focus:ring-4 focus:ring-white/20 transition-all duration-300 shadow-lg placeholder-gray-500"
+                    placeholder="••••••••">
+            </div>
+
+            <div class="animate-slide-up delay-300">
+                <label for="confirm_password"
+                    class="block text-xs font-semibold uppercase tracking-wider mb-2 text-gray-300">Confirm
+                    Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required
+                    class="w-full bg-white text-black px-4 py-3 outline-none border border-transparent focus:border-gray-500 focus:ring-4 focus:ring-white/20 transition-all duration-300 shadow-lg placeholder-gray-500"
+                    placeholder="••••••••">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-white text-black font-bold uppercase tracking-widest py-4 mt-6 hover:bg-gray-200 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 animate-slide-up delay-300">
+                Register
+            </button>
+        </form>
+
+        <p class="text-center text-gray-400 text-sm mt-6 animate-slide-up delay-300">
+            Already a member? <a href="/"
+                class="text-white font-semibold hover:underline underline-offset-4 transition-all">Sign In</a>
+        </p>
+    </div>
+
+    {% if signup_success %}
+    <script>
+        alert("Signup successfully!");
+        window.location.href = "/";
+    </script>
+    {% endif %}
+
+    <script src="/static/js/main.js"></script>
+</body>
+
+</html>
